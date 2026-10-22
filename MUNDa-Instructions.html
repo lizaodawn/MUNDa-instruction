@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   MUNDa Instructions
+  </title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+   html,body { 
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      line-height: 1.35em;
+      font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+      scroll-behavior: smooth;
+   }
+
+   div.headerBar { box-sizing:border-box;
+                position:fixed; 
+                width:100%; 
+                height:50px;     /* 預設 box-sizing: content-box; 加上 padding 後，共佔 50px 高度 */
+                padding-top:12px;       
+                background-color:#efefef; 
+                color:#757575; 
+                z-index:10;     /* 必須顯示在 main area 的上方 */
+              }
+
+   /* Responsive Layout and Image Scaling */
+   img, video {
+      max-width: 100%;
+      height: auto;
+   }
+
+   /* Main page layout */
+   #page-container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 20px;
+      /*!margin-top: 50px;*/
+   }
+
+   /* Left content wrapper */
+   #content-wrapper {
+      flex: 1;
+      padding: 8px 30px 8px 16px;
+      min-width: 0; /* Prevents flex blowout with wide images */
+   }
+
+   /* Right sidebar for TOC */
+   #sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 70px;
+      height: calc(100vh - 90px);
+      overflow-y: auto;
+      padding-left: 20px;
+      border-left: 1px solid #ddd;
+   }
+
+   /* Table of contents styling */
+   #toc {
+      margin-bottom: 1em;
+      padding: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      font-size: 0.95em;
+   }
+   #toc h2 {
+      margin-top: 0;
+      font-size: 1.05em;
+      border-bottom: none;
+   }
+   #toc ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0.2em 0 0 0;
+   }
+   #toc li {
+      margin: 0.4em 0;
+   }
+   #toc a {
+      text-decoration: none;
+      color: #293b55;
+   }
+   #toc a:hover {
+      text-decoration: underline;
+   }
+
+   #toc summary::marker {
+      color: #7890ab; /* Change this hex code to your preferred color */
+   }
+   
+   /* Optional: For older Safari browsers that don't support ::marker */
+   #toc summary::-webkit-details-marker {
+      color: #7890ab;
+   }
+
+   #toc details ul {
+    margin-left: 10px;
+    padding-left: 10px;
+   }
+
+   #toc details ul ul {
+    margin-left: 10px;
+    padding-left: 10px;
+   }
+
+   
+
+
+
+   /* Back to top links */
+   .back-to-top {
+      display: inline-block;
+      font-size: 0.85em;
+      color: #7890ab;
+      text-decoration: none;
+      float: right;
+      margin-top: 10px;
+      margin-bottom: 20px;
+   }
+   .back-to-top:hover {
+      text-decoration: underline;
+   }
+   .clearfix {
+      clear: both;
+   }
+
+   h2 {
+      margin-top: 1.4em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.2em;
+      scroll-margin-top: 70px;
+   }
+   code {
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+      background-color: #f2f2f2;
+      padding: 0 3px;
+      border-radius: 3px;
+   }
+
+   #content-wrapper a {
+      color: #7592b4; /* Change this hex code to whatever color you want */
+      text-decoration: none;
+   }
+   
+   #content-wrapper a:hover {
+      text-decoration: underline;
+   }
+
+   .notice {
+   background-color: rgba(255, 248, 220, 0.65);
+   padding: 12px 16px;
+   margin: 1em 0;
+   border-radius: 4px;
+}
+   
+
+   /* Media Queries for Mobile/Tablets */
+   @media (max-width: 900px) {
+      #page-container {
+         flex-direction: column-reverse; /* Puts TOC at the top on mobile */
+         padding: 10px;
+      }
+      #sidebar {
+         width: 100%;
+         height: auto;
+         position: relative;
+         top: 0;
+         padding-left: 0;
+         border-left: none;
+         border-bottom: 1px solid #ddd;
+         margin-bottom: 20px;
+         padding-bottom: 20px;
+      }
+      #content-wrapper {
+         padding: 8px;
+      }
+   }
+   
+* { box-sizing: border-box; }
+.headerBar { top:0; left:0; }
+#page-container { padding-top:70px; }
+body { color:#29313b; line-height:1.6; }
+h3 { scroll-margin-top:70px; }
+.placeholder { padding:28px 20px; margin:20px 0; border:2px dashed #bdc9d6; background:#f8fafc; color:#61748a; text-align:center; border-radius:4px; }
+table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
+.data-table th,.data-table td { padding:10px; border:1px solid #ddd; text-align:left; }
+@media(max-width:900px) { #page-container { padding-top:65px; } }
+  </style>
+ </head>
+ <body>
+  <!-- START OF REUSED BANNER -->
+  <div class="headerBar">
+   <table width="100%">
+    <tr>
+     <td width="300">
+      <span style="font-size:24px; font-weight:bold; padding-left:16px;">
+       MUNDa Instructions
+      </span>
+     </td>
+     <td align="center">
+     </td>
+    </tr>
+   </table>
+  </div>
+  <!-- END OF BANNER -->
+  <div id="page-container">
+   <!-- Left side: Main Content -->
+   <div id="content-wrapper">
+    <div id="test">
+     <h2 id="about-munda">
+      01 About MUNDa
+     </h2>
+     <p>MUNDa is a spatial analysis platform for data annotated in <strong><a href="https://entmarkus.xmarkus.org/"">ENTMARKUS</a></strong>, <strong><a href="https://comarkus.xmarkus.org/">COMARKUS</a></strong> and <strong><a href="https://immarkus.xmarkus.org/"">IMMARKUS</a></strong>. It imports <code>XML</code> files exported from <strong><a href="https://xmarkus.xmarkus.org/">X-MARKUS</a></strong>, allowing the data to be displayed and explored in an interactive GIS environment, complete with various topographic and historical administrative layers, that preserves their context and also allows for AI-assisted analysis of the spatial data.</p>
+     <p>MUNDa also allows for the visualization of spatial data in <code>TSV</code> and similar formats.</p>
+     <p>For more information, source code, and citation details, visit the <strong>information</strong> section in <strong><a href="https://munda.xmarkus.org/">MUNDa</a></strong>.</p>
+     <h3 id="the-interface">
+      The Interface
+     </h3>
+     <p>
+      When MUNDa opens in the browser, a map appears in the main content area, displaying imported data. The interface provides two main sets of controls:
+     </p>
+     <ul>
+      <li><strong><a href="#left-menu-bar">Left Menu bar</a></strong>: Access features for importing, table searching, exporting data, as well as marker settings, language options, and project information.</li>
+      <li><strong><a href="#map-selection">Map Selection</a></strong>: Select a base map, show or hide historical map overlays, and adjust their opacity. Additional overlays are available through WMTS services.</li>
+     </ul>
+     <h4 id="left-menu-bar">
+      Left Menu Bar
+     </h4>
+     <figure><img src="img/01_fig1.png" alt="Interface Screenshot">
+     <figcaption>
+      Left Menu Bar in MUNDa interface
+     </figcaption> 
+     </figure>
+     <p>Use the icons on the left menu bar to access the following features:</p>
+     <p>
+      <i class="fa-solid fa-file-import"></i>
+      Import Data: Upload a file in <code>XML</code>, <code>TSV</code>, <code>JSON</code> or <code>Excel</code> format, or paste tabular data for spatial exploration. Once the data is imported, a filtering and navigation panel appears on the right. For more information, see <a href="#importing-data">Importing Data</a>.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      Table Search: Search <strong>place names</strong> in imported records or the <a href="https://www.openstreetmap.org/">OpenStreetMap database</a>, or filter individual table columns by keyword. For more information, see <a href="#table-search">Table Search</a> in <a href="#searching-and-filtering-data">Searching and Filtering Data</a>.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-clock"></i>
+      Time Range: Filter records by a selected period. The time range is based on event time for event datasets, or on the publication time recorded in the metadata if event time is unavailable or the dataset is not event-based. You can download the time-filtered records or add them directly to the map as a new layer. For more information, see <a href="#searching-and-filtering-data">Searching and Filtering Data</a>.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-file-export"></i>
+      Export: Export the full imported dataset or a filtered subset in <code>TSV</code>, <code>JSON</code>, or <code>Excel</code> format. You can also export the map as a <code>PNG</code> image. For more information, see <a href="#exporting-data">Exporting Data</a>.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-gear"></i>
+      Map Marker Settings: Adjust the appearance of markers for imported records and filtered results.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-language"></i>
+      Change Language: Select the interface language. Available languages are English, Traditional Chinese, Simplified Chinese, Korean, and Japanese.
+      </p>
+
+      <p>
+      <i class="fa-solid fa-info"></i>
+      Information: View project information and citation details.
+      </p>
+   
+   <h4 id="map-selection">
+   Map Selection
+   </h4>
+   <p>The map selection menu allows you to manage the base map and map overlays, independently of the data layers created from filtered records.</p>
+   <ul>
+      <li><strong>Selecting a Base Map</strong></li>
+      <P>Select a base map from the available options. Only one base map can be selected at a time.</P>
+      <ul>
+         <li>
+            NTU Terrain
+         </li>
+
+         <li>
+            <a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+         </li>
+
+         <li>
+            <a href="https://carto.com/">CARTO</a>
+               <ul>
+                  <li>CartoDB Positron</li>
+                  <li>CartoDB Voyager (Color)</li>
+                  <li>CartoDB Voyager (No Labels)</li>
+               </ul>
+         </li>
+
+         <li>
+            <a href="https://www.mapbox.com/">Mapbox</a>
+               <ul>
+                  <li>Mapbox Basic (CHT)</li>
+                  <li>Mapbox Basic (EN)</li>
+                  <li>Mapbox Street (CHT)</li>
+                  <li>Mapbox Outdoor (CHT)</li>
+                  <li>Mapbox Satellite Streets (CHT)</li>
+               </ul>
+         </li>
+
+         <li>
+            <a href="https://www.esri.com/">Esri</a>
+               <ul>
+                  <li>ESRI Gray</li>
+                  <li>ESRI Dark Gray</li>
+                  <li>ESRI Topographic</li>
+                  <li>ESRI Oceans</li>
+                  <li>ESRI National Geographic</li>
+                  <li>ESRI Terrain</li>
+                  <li>ESRI Imagery</li>
+               </ul>
+         </li>
+
+         <li>White Background</li>
+      </ul>
+      <P></P>
+      <li><strong>Displaying Historical Map Overlays</strong></li>
+      <P>Select or clear the checkboxes to show or hide historical map overlays, and adjust their contrast, brightness, saturation and opacity. Multiple overlays can be selected at the same time.</P>
+      
+      <li><strong>Adding Map Overlays from <a href="https://gis.sinica.edu.tw/ccts/">Chinese Civilization in Time and Space (CCTS) WMTS Service</a></strong></li>
+      <P>MUNDa provides access to additional map overlays through WMTS (Web Map Tile Services) supplied by the <a href="https://gis.rchss.sinica.edu.tw/ccts/">Chinese Civilization in Time and Space (CCTS) system</a>.</P>
+      <ol>
+         <li>Click the <strong>+</strong> button in the upper-right corner of the map selection menu.</li>
+         <li>Select a <strong>Region Category</strong> from the dropdown menu.</li>
+         <li>Select a <strong>WMTS Service Source</strong> from the dropdown menu.</li>
+         <li>Click <strong>Load Live Version</strong>.</li>
+         <li>Select one or more maps to add as <strong>overlays</strong>, and click <strong>Confirm Selection</strong>.</li>
+      </ol>
+      <p>The selected overlays appear automatically in the current view. Use the overlay adjustment panel to adjust their contrast, brightness, saturation and opacity, or remove them.</p>
+   
+   
+   </ul>
+
+
+     <a class="back-to-top" href="#about-munda">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     <h2 id="data-preparation">
+      02 Preparing Your Data
+     </h2>
+     <h3 id="xml-files">
+      X-MARKUS XML Files
+     </h3>
+     <p>
+      Prepare an XML file exported from X-MARKUS.
+     </p>
+     <p>
+      [Data preparation instructions]
+     </p>
+     <h3 id="tabular-files">
+      Tabular Data
+     </h3>
+     <p>
+      For coordinate-based tables, prepare the fields below. Coordinates use WGS84 decimal degrees.
+     </p>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>
+         Field
+        </th>
+        <th>
+         Description
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         <code>
+          id
+         </code>
+        </td>
+        <td>
+         Record identifier.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          name
+         </code>
+        </td>
+        <td>
+         Record name.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          x
+         </code>
+        </td>
+        <td>
+         Longitude.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          y
+         </code>
+        </td>
+        <td>
+         Latitude.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          date
+         </code>
+        </td>
+        <td>
+         Optional date.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          text
+         </code>
+        </td>
+        <td>
+         Optional descriptive or source text.
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="placeholder">
+      [Example data screenshot]
+     </div>
+     <a class="back-to-top" href="#data-preparation">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     <h2 id="importing-data">
+      03 Importing Data
+     </h2>
+     <h3 id="importing-xml">
+      Importing XML
+     </h3>
+     <ol>
+      <li>
+       Open Import Data from the left menu bar.
+      </li>
+      <li>
+       Select your XML file in the upload area.
+      </li>
+      <li>
+       Click Parse XML.
+      </li>
+      <li>
+       Review the Coordinates Mode options.
+      </li>
+      <li>
+       Click Conversion.
+      </li>
+     </ol>
+     <p>
+      [Coordinate selection and final import instructions]
+     </p>
+     <div class="placeholder">
+      [XML import screenshot]
+     </div>
+     <h3 id="importing-tables">
+      Importing Tabular Data
+     </h3>
+     <p>
+      Open Import Data to load a supported file or paste tab-separated data from a spreadsheet into the input area.
+     </p>
+     <p>
+      [File import instructions]
+     </p>
+     <ol>
+      <li>
+       Copy your table, including the header row.
+      </li>
+      <li>
+       Paste it into the data input area.
+      </li>
+      <li>
+       Click Import.
+      </li>
+     </ol>
+     <div class="placeholder">
+      [Table import screenshot]
+     </div>
+     <a class="back-to-top" href="#importing-data">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     <h2 id="navigating-map">
+      04 Navigating the Map
+     </h2>
+     <h3 id="heatmap-3d-bars">
+      Showing Data Clusters with Heatmap and 3D Bars
+     </h3>
+     <p>
+      [Map navigation instructions]
+     </p>
+     <h3 id="data-point-details">
+      Viewing Data Point Details
+     </h3>
+     <p>
+      [Note the clicking on data points would not show multiple records in the same location, but only the first record. The user can use the search function to find all records in that location.]
+     </p>
+     
+     <a class="back-to-top" href="#navigating-map">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+
+     <h2 id="searching-data">
+      05 Searching and Filtering Data
+     </h2>
+     <h3 id="map-search">Map Search</h3>
+     <h4 id="tag-filter">
+      Searching Imported Records with Tag Filters
+     </h4>
+     <ul>
+      <li>
+       Filter Tab
+       <ul>
+         <li>Hierarchical Filtering</li>
+         <li>Advanced Filtering</li>
+       </ul>
+      </li>
+      <li>
+       Search Tab
+      </li>
+      <li>
+       Export Tab
+      </li>
+     </ul>
+     
+     <h4 id="map-filter">
+      Searching Imported Records with Map Filter
+     </h4>
+     <ul>
+      <li>Metadata View</li>
+      <li>Event View</li>
+      <li>Reset</li>
+     </ul>
+     
+     <h4 id="ai-analysis">
+      Working with Filtered Results with AI-Assisted Analysis
+     </h4>
+     <ol>
+      <li>
+       Set your AI model and parameters.
+      </li>
+      <li>
+       Modify your prompt based on the one generated with the filtered results.
+      </li>
+      <li>
+       Click <strong>Send</strong>.
+      </li>
+     </ol>
+    
+     <h4 id="annotation-info">
+      Viewing Annotation Information as Filtered Results
+     </h4>
+     <p>After conducting your filter search, multiple records mapping to the same location will spread as separate markers on the map. Click on a marker to view its annotation information.</p>
+     <ul>
+      <li><strong>Text Annotation</strong></li>
+      <li><strong>Image Annotation</strong></li>
+     </ul>
+     
+     <h3 id="table-search">
+      Table Search
+     </h3>
+     <ul>
+      <li>Search place names in imported records or the <a href="https://www.openstreetmap.org/">OpenStreetMap database</a>.</li>
+      <li>Filter individual table columns by keyword.</li>
+     </ul>
+
+     <a class="back-to-top" href="#searching-data">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     
+     
+     <h2 id="display-settings">
+      06 Adjusting Display Settings
+     </h2>
+     <h3 id="regular-marker-settings">
+      Regular Marker Appearance
+     </h3>
+     <p>
+      Open Settings to adjust marker color, symbol, and size. 
+     </p>
+     <h3 id="filter-result-marker-settings">
+      Filtered Result Marker Appearance
+     </h3>
+     <p>
+      Separate settings are available for search-result markers.
+     </p>
+     
+     <a class="back-to-top" href="#display-settings">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     
+     <h2 id="exporting">
+      07 Exporting Data and Maps
+     </h2>
+     <h3 id="export-all">
+      Exporting All Data
+     </h3>
+     
+     <h3 id="export-subset">
+      Exporting Filtered Data
+     </h3>
+     <ul>
+      <li>Export as Data Files</li>
+      <li>Export as New Map Layer</li>
+     </ul>
+
+     <h3 id="export-image">
+      Exporting a Map Image
+     </h3>
+     
+     <a class="back-to-top" href="#exporting">
+      ↑ Back to section top
+     </a>
+     <div class="clearfix">
+     </div>
+     
+    </div>
+   </div>
+   <!-- Right side: Table of contents -->
+   <div id="sidebar">
+    <div id="toc">
+     <h2>
+      Table of contents
+     </h2>
+     <ul>
+      <li>
+       <details>
+        <summary>
+         <a href="#about-munda">
+          01 About MUNDa
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#the-interface">
+           The Interface
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#data-preparation">
+          02 Preparing Your Data
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#xml-files">
+           X-MARKUS XML Files
+          </a>
+         </li>
+         <li>
+          <a href="#tabular-files">
+           Tabular Data
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#importing-data">
+          03 Importing Data
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#importing-xml">
+           Importing XML
+          </a>
+         </li>
+         <li>
+          <a href="#importing-tables">
+           Importing Tabular Data
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#navigating-map">
+          04 Navigating the Map
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#heatmap-3d-bars">
+           Showing Data Clusters with Heatmap and 3D Bars
+          </a>
+         </li>
+         <li>
+          <a href="#data-point-details">
+           Viewing Data Point Details
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#searching-data">
+          05 Searching and Filtering Data
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#map-search">
+           Map Search
+          </a>
+         </li>
+         <li>
+          <a href="#table-search">
+           Table Search
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#display-settings">
+          06 Adjusting Display Settings
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#regular-marker-settings">
+           Regular Marker Appearance
+          </a>
+         </li>
+         <li>
+          <a href="#filter-result-marker-settings">
+           Filtered Result Marker Appearance
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+      <li>
+       <details>
+        <summary>
+         <a href="#exporting">
+          07 Exporting Data and Maps
+         </a>
+        </summary>
+        <ul>
+         <li>
+          <a href="#export-all">
+           Exporting All Data
+          </a>
+         </li>
+         <li>
+          <a href="#export-subset">
+           Exporting Filtered Data
+          </a>
+         </li>
+         <li>
+          <a href="#export-image">
+           Exporting a Map Image
+          </a>
+         </li>
+        </ul>
+       </details>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
