@@ -266,7 +266,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
 
       <p>
       <i class="fa-solid fa-gear"></i>
-      Map Marker Settings: Adjust the appearance of markers for imported records and filtered results.
+      Map Marker Settings: Adjust the appearance of markers for imported records and filtered results. For more information, see <a href="#adjusting-display-settings">Adjusting Display Settings</a>.
       </p>
 
       <p>
@@ -283,6 +283,24 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
    Map Selection
    </h4>
    <p>The map selection menu allows you to manage the base map and map overlays, independently of the data layers created from filtered records.</p>
+   <figure>
+      <img src="img/01_fig2.png" alt="Map Selection">
+      <figcaption>Map Selection Menu on the Upper-Right Corner of the NUMDa Interface</figcaption>
+   </figure>
+   <figure>
+      <video
+          autoplay
+          muted
+          playsinline
+          loop
+          width="1000"
+          style="max-width: 100%; height: auto;"
+       >
+       <source src="img/01_fig3.mp4" type="video/mp4">
+   </video>
+   <figcaption> Hovering on Map Selection Menu to Browse the built-in Lists of Base Maps and Historical Overlays</figcaption>
+   </figure>
+
    <ul>
       <li><strong>Selecting a Base Map</strong></li>
       <P>Select a base map from the available options. Only one base map can be selected at a time.</P>
@@ -344,7 +362,19 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          <li>Select one or more maps to add as <strong>overlays</strong>, and click <strong>Confirm Selection</strong>.</li>
       </ol>
       <p>The selected overlays appear automatically in the current view. Use the overlay adjustment panel to adjust their contrast, brightness, saturation and opacity, or remove them.</p>
-   
+   <figure>
+      <video
+          autoplay
+          muted
+          playsinline
+          loop
+          width="1000"
+          style="max-width: 100%; height: auto;"
+       >
+       <source src="img/01_fig4.mp4" type="video/mp4">
+   </video>
+   <figcaption> Adding the 1898 Nanjing City Map as an Overlay from the CCTS WMTS Service</figcaption>
+   </figure>
    
    </ul>
 
@@ -354,6 +384,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      </a>
      <div class="clearfix">
      </div>
+     
      <h2 id="data-preparation">
       02 Preparing Your Data
      </h2>
@@ -361,16 +392,19 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       X-MARKUS XML Files
      </h3>
      <p>
-      Prepare an XML file exported from X-MARKUS.
+      Prepare an <code>.xml</code> file exported from X-MARKUS.  containing either the complete X-MARKUS dataset or a filtered subset. Files can be exported in three ways:
      </p>
-     <p>
-      [Data preparation instructions]
-     </p>
+     <ul>
+      <li><strong>After converting annotations</strong>: Download the complete converted dataset as an<code>.xml</code>. For more information, see <a href="https://lizaodawn.github.io/X-MARKUS-instruction/XmarkusTools/XmarkusPlatform-Help-Responsive.html#converting-annotations" target="_blank">Converting Annotations</a>.</li>
+      <li>From the <strong>Searching and Filtering</strong> interface: Apply filters to the converted dataset, then click <strong>export xml</strong> to download the current results. For more information, see <a href="https://lizaodawn.github.io/X-MARKUS-instruction/XmarkusTools/XmarkusPlatform-Help-Responsive.html#visualizing-and-exporting-filtered-annotations" target="_blank">Visualizing and Exporting Filtered Annotations</a>.</li>
+      <li>From the <strong>Visualizing Relations</strong> interface: Apply the required graph filters, then click <strong>XML</strong> to download the filtered subset. For more information, see <a href="https://lizaodawn.github.io/X-MARKUS-instruction/XmarkusTools/XmarkusPlatform-Help-Responsive.html#exporting-the-graph" target="_blank">Exporting the Graph</a>.</li>
+   </ul>
+   
      <h3 id="tabular-files">
       Tabular Data
      </h3>
      <p>
-      For coordinate-based tables, prepare the fields below. Coordinates use WGS84 decimal degrees.
+      Prepare a table with field names in the first row and one record per row. Coordinates must use <strong>WGS84</strong> decimal degrees.
      </p>
      <table class="data-table">
       <thead>
@@ -392,16 +426,6 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
         </td>
         <td>
          Record identifier.
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <code>
-          name
-         </code>
-        </td>
-        <td>
-         Record name.
         </td>
        </tr>
        <tr>
@@ -431,7 +455,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          </code>
         </td>
         <td>
-         Optional date.
+         Date in <code>YYYYMMDD</code> format.
         </td>
        </tr>
        <tr>
@@ -441,14 +465,44 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          </code>
         </td>
         <td>
-         Optional descriptive or source text.
+         Descriptive or source text.
         </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          place
+         </code>
+        </td>
+        <td>
+         Place name.
+        </td>        
+       </tr>
+       <tr>
+        <td>
+         <code>
+          url
+         </code>
+        </td>
+        <td>
+         Link to an external resource.
+        </td>        
+       </tr>
+       <tr>
+        <td>
+         <code>
+          img
+         </code>
+        </td>
+        <td>
+         Image URI; separate multiple URIs with spaces.
+        </td>        
        </tr>
       </tbody>
      </table>
-     <div class="placeholder">
-      [Example data screenshot]
-     </div>
+
+     <P>Additional columns can be included as needed. For details, see the <a href="goda.com/account/editbooking.html?bookingId=hcs5W0BLOLWBScBCNycZFQ%3D%3D&af_force_deeplink=true&c=CONFIRMATION_EMAIL_ONELINK&af_sub3=3fade761-4031-4140-8241-4dd897195fd1&deep_link_value=agoda%3A%2F%2Fmmb%3FbookingToken%3Dhcs5W0BLOLWBScBCNycZFQ%253D%253D&af_sub4=Hotel&af_dp=agoda%3A%2F%2Fmmb%3FbookingToken%3Dhcs5W0BLOLWBScBCNycZFQ%253D%253D&pid=redirect&ds=c31NdlTnRX6YWSI%2F">DocuGIS Tabular Data Specification</a>.</P>
+    
      <a class="back-to-top" href="#data-preparation">
       ↑ Back to section top
      </a>
