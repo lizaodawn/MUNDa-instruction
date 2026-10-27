@@ -222,7 +222,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h2 id="about-munda">
       01 About MUNDa
      </h2>
-     <p>MUNDa is a spatial analysis platform for data annotated in <strong><a href="https://entmarkus.xmarkus.org/" target="_blank">ENTMARKUS</a></strong>, <strong><a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a></strong> and <strong><a href="https://immarkus.xmarkus.org/" target="_blank">IMMARKUS</a></strong>. It imports <code>XML</code> files exported from <strong><a href="https://xmarkus.xmarkus.org/" target="_blank">X-MARKUS</a></strong>, allowing the data to be displayed and explored in an interactive GIS environment, complete with various topographic and historical administrative layers, that preserves their context and also allows for AI-assisted analysis of the spatial data.</p>
+     <p>MUNDa is a spatial analysis platform for data annotated in <strong><a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a></strong> and <strong><a href="https://immarkus.xmarkus.org/" target="_blank">IMMARKUS</a></strong>. It imports <code>XML</code> files exported from <strong><a href="https://xmarkus.xmarkus.org/" target="_blank">X-MARKUS</a></strong>, allowing the data to be displayed and explored in an interactive GIS environment, complete with various topographic and historical administrative layers, that preserves their context and also allows for AI-assisted analysis of the spatial data.</p>
      <p>MUNDa also allows for the visualization of spatial data in <code>TSV</code> and similar formats.</p>
      <p>For more information, source code, and citation details, visit the <strong>information</strong> section in <strong><a href="https://munda.xmarkus.org/" target="_blank">MUNDa</a></strong>.</p>
      <h3 id="the-interface">
@@ -501,7 +501,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       </tbody>
      </table>
 
-     <P>Additional columns can be included as needed. For details, see the <a href="goda.com/account/editbooking.html?bookingId=hcs5W0BLOLWBScBCNycZFQ%3D%3D&af_force_deeplink=true&c=CONFIRMATION_EMAIL_ONELINK&af_sub3=3fade761-4031-4140-8241-4dd897195fd1&deep_link_value=agoda%3A%2F%2Fmmb%3FbookingToken%3Dhcs5W0BLOLWBScBCNycZFQ%253D%253D&af_sub4=Hotel&af_dp=agoda%3A%2F%2Fmmb%3FbookingToken%3Dhcs5W0BLOLWBScBCNycZFQ%253D%253D&pid=redirect&ds=c31NdlTnRX6YWSI%2F">DocuGIS Tabular Data Specification</a>.</P>
+     <P>Additional columns can be included as needed. For details, see the <a href="https://docs.google.com/spreadsheets/d/15QvuhmZqmfGxTZ17jUDM_yASM00TzvE5W6UGW8hI7nw/edit?gid=0#gid=0">DocuGIS Tabular Data Specification</a>.</P>
     
      <a class="back-to-top" href="#data-preparation">
       ↑ Back to section top
@@ -511,55 +511,149 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h2 id="importing-data">
       03 Importing Data
      </h2>
-     <h3 id="importing-xml">
-      Importing XML
+     Annotation data can be imported to MUNDa by <a href="#importing-data-files">uploading a file</a> or <a href="#pasting-tabular-data">pasting tabular data</a> into the Import Data dialog</a>.
+     <h3 id="importing-data-files">
+      Importing Data Files
      </h3>
+     Upload an <code>XML</code>, <code>TSV</code>, <code>JSON</code>, or <code>Excel</code> file through the Import Data dialog. The following instructions use an <code>XML</code> file as an example.
      <ol>
       <li>
-       Open Import Data from the left menu bar.
+       Click the <i class="fa-solid fa-file-import"></i> <strong>Import Data</strong> icon in the left menu bar to open the import dialog.
+      <figure><img src="img/03_fig1.png" alt="Import XML" width="1000">
+      <figcaption>
+       Clicking <i class="fa-solid fa-file-import"></i> Import Data Icon to Open the Import Dialog in MUNDa
+      </figcaption>
+      </figure>
       </li>
       <li>
-       Select your XML file in the upload area.
+       Click <strong>Drag or click to upload a file</strong> and select your XML file.
+       <figure>
+         <img src="img/03_fig2.png" alt="Import XML" width="1000">
+         <figcaption>
+          Selecting an XML File to Import into MUNDa
+         </figcaption>
+       </figure>
       </li>
       <li>
-       Click Parse XML.
+       Click <strong>Parse XML</strong>.
+       <figure>
+         <img src="img/03_fig3.png" alt="Parse XML" width="1000">
+         <figcaption>
+          Clicking Parse XML to Process the Imported XML File in MUNDa
+         </figcaption>
+       </figure>
       </li>
       <li>
-       Review the Coordinates Mode options.
+       Select the coordinate source for event and/or image locations:
+       <ul>
+        <li><strong>Event Coordinates</strong>: Choose <strong>annotated event locations</strong> or <strong>locations recorded in the metadata</strong>.</li>
+        <li><strong>Image Coordinates</strong>: Choose from <strong>locations recorded in the metadata</strong> or a <strong>location field set by the user in the IMMARKUS data model</strong>.</li>
+       </ul>
+       <figure>
+         <img src="img/03_fig4.png" alt="Select Coordinate Source" width="1000">
+         <figcaption>
+          Selecting Annotated Event Locations as Event Coordinates and the Field Set in IMMARKUS (Annotated TGAZ ID) as Image Coordinates When Importing XML into MUNDa
+         </figcaption>
+       </figure>
       </li>
       <li>
-       Click Conversion.
+         For IMMARKUS datasets, specify a <strong>prefix</strong> for the annotation tag group displayed in the filter panel. The default prefixis <strong>IMG</strong>.
+      </li>
+      <li>
+       Click <strong>Conversion</strong>.
+      </li>
+      <figure>
+         <img src="img/03_fig5.png" alt="Conversion" width="1000">
+         <figcaption>
+          Keeping the Default Image Tag Group Prefix and Clicking Conversion to Create a Data Layer from the Imported XML File in MUNDa
+         </figcaption>
+       </figure>
+      <li>
+       Enter a <strong>data layer name</strong> or keep the system default, then click <strong>OK</strong>.
+      <figure>
+         <img src="img/03_fig6.png" alt="Data Layer Name" width="1000">
+         <figcaption>
+          Entering a Data Layer Name for the Data Layer Created from the Imported XML File in MUNDa
+         </figcaption>
+       </figure>
+      </li>
+      <li>
+       The parsed data appears as a table in the preview area of the import dialog. Click <strong>Import</strong> to add it to the map.
+      <figure>
+         <img src="img/03_fig7.png" alt="Import Data" width="1000">
+         <figcaption>
+          Reviewing the Parsed Data in the Preview Area of the Import Dialog
+         </figcaption>
+       </figure>
+      </li>
+      <li>
+         Repeat the process to import additional files as separate data layers. In the <strong>data layer panel</strong> in the lower-right corner, you can:
+         <ul>
+           <li>Tick or untick a layer name to show or hide it on the map.</li>
+           <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/03_fig8.mp4" type="video/mp4">
+            </video>
+            <figcaption>Toggling Data Layers On and Off on the Map</figcaption>
+            </figure>
+           <li>Remove the data layer by clicking the delete icon.</li>
+           <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/03_fig9.mp4" type="video/mp4">
+            </video>
+            <figcaption>Removing a Data Layer from the Map</figcaption>
+            </figure>
+         </ul>
       </li>
      </ol>
-     <p>
-      [Coordinate selection and final import instructions]
-     </p>
-     <div class="placeholder">
-      [XML import screenshot]
-     </div>
-     <h3 id="importing-tables">
-      Importing Tabular Data
+   
+     <h3 id="pasting-tabular-data">
+      Pasting Tabular Data
      </h3>
      <p>
-      Open Import Data to load a supported file or paste tab-separated data from a spreadsheet into the input area.
-     </p>
-     <p>
-      [File import instructions]
+      Copy tabular data, including the header row, from a <code>TSV</code> file, <code>Excel</code> spreadsheetor <code>Google Sheets</code> document and paste it into the input area in the Import Data dialog.
      </p>
      <ol>
       <li>
-       Copy your table, including the header row.
+       Click the <i class="fa-solid fa-file-import"></i> <strong>Import Data</strong> icon in the left menu bar to open the import dialog.
       </li>
       <li>
-       Paste it into the data input area.
+       Paste the copied content into the data input area.
       </li>
       <li>
-       Click Import.
+       Click <strong>Import</strong> to add the data to the map.
       </li>
+      <figure>
+         <video
+             autoplay
+             muted
+             playsinline
+             loop
+             width="1000"
+             style="max-width: 100%; height: auto;"
+          >
+          <source src="img/03_fig10.mp4" type="video/mp4">
+          </video>
+         <figcaption>
+          Pasting Tabular Data to Import Data in MUNDa
+         </figcaption>
+       </figure>
      </ol>
-     <div class="placeholder">
-      [Table import screenshot]
-     </div>
+     
      <a class="back-to-top" href="#importing-data">
       ↑ Back to section top
      </a>
