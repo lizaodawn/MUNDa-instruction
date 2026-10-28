@@ -663,17 +663,148 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       04 Navigating the Map
      </h2>
      <h3 id="heatmap-3d-bars">
-      Showing Data Clusters with Heatmap and 3D Bars
+      Showing Data Density with Heatmap and 3D Bars
      </h3>
-     <p>
-      [Map navigation instructions]
-     </p>
+       <p>When multiple records share the same location, MUNDa displays them as a single marker. To compare record density across an area, use the <strong>heatmap</strong> or <strong>3D bars</strong> view.</p>
+       <ul>
+         <li>
+         <strong>Heatmap</strong>: Click the <strong>heatmap icon</strong>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                  width="1em" height="1em" viewBox="0 0 24 24"
+                  aria-hidden="true" focusable="false"
+                  style="vertical-align: -0.125em;">
+               <g fill="none" stroke="currentColor" stroke-width="1.8">
+               <circle cx="12" cy="5" r="3"/>
+               <circle cx="5" cy="17" r="3"/>
+               <circle cx="19" cy="17" r="3"/>
+               </g>
+               <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+            in the left-hand toolbar to display record density in the current view.
+            Areas with more records appear in warmer colors.
+            <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig1.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Clicking the Heatmap Icon to Show Record Density in the Current Map View
+            </figcaption>
+            </figure>
+         </li>
+         <li>
+         <strong>3D Bars</strong>: Click the <strong>3D bars icon</strong>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                  width="1em" height="1em" viewBox="0 0 24 24"
+                  aria-hidden="true" focusable="false"
+                  style="vertical-align: -0.125em;">
+               <g fill="currentColor">
+               <rect x="4" y="12" width="3" height="7"/>
+               <rect x="9" y="7" width="3" height="12"/>
+               <rect x="14" y="10" width="3" height="9"/>
+               <rect x="19" y="3" width="3" height="16"/>
+               <rect x="2" y="20" width="20" height="1.5"/>
+               </g>
+            </svg>
+            in the left-hand toolbar to display a bar for each area.
+            Bar height corresponds to the number of records.
+            Hover over a bar to see the number of records at that location.
+         </li>
+         <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig2.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Clicking the 3D Bars Icon and Hovering over Bars to View the Record Counts
+            </figcaption>
+            </figure>
+       </ul>
      <h3 id="data-point-details">
       Viewing Data Point Details
      </h3>
-     <p>
-      [Note the clicking on data points would not show multiple records in the same location, but only the first record. The user can use the search function to find all records in that location.]
+       <p>
+      Click a marker to open the <strong>data info</strong> pane on the right side of the map and view annotation records at that location. 
      </p>
+     <p>
+      For <strong>event</strong> records, the <strong>data info</strong> pane shows the event tag list, inscription text, comments, and metadata recorded by the user. You can also display all entity tags set by the user in the inscription text.
+     </p>
+     <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig3.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Clicking a Marker on the Map to Open the Data Info Pane and View An Event Record at That Location
+            </figcaption>
+            </figure>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig4.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Toggling On Comments and Entity Tags Set by the User in the Text Section of the Data Info Pane
+            </figcaption>
+            </figure>
+     <p>
+      For <strong>image</strong> records, the <strong>data info</strong> pane shows the image, along with the subfolder and image metadata recorded by the user. You can also highlight annotated regions according to the tags set by the user to view their annotated properties.
+     </p>
+     <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig5.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Clicking a Marker on the Map to Open the Data Info Pane and View An Image Record at That Location
+            </figcaption>
+            </figure>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/04_fig6.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Selecting Annotated Regions in the Image Section of the Data Info Pane to View Their Properties
+            </figcaption>
+            </figure>
+     <p class="notice">When no filter is applied,  the data info pane shows only the first record at a location. To view all records or records that meet specific criteria at one or more locations, first apply a <a href="#tag-filter">Tag filter</a> or <a href="#map-filter">Map filter</a> to the dataset. For more information, see <a href="#searching-data">Searching and Filtering Data</a>.</p>
      
      <a class="back-to-top" href="#navigating-map">
       ↑ Back to section top
