@@ -229,11 +229,11 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       The Interface
      </h3>
      <p>
-      When MUNDa opens in the browser, a map appears in the main content area, displaying imported data. The interface provides two main sets of controls:
+      When you open <a href="https://munda.xmarkus.org/" target="_blank">MUNDa</a> in the browser, a map appears in the main content area, displaying imported data. The interface provides two main sets of controls:
      </p>
      <ul>
-      <li><strong><a href="#left-menu-bar">Left Menu bar</a></strong>: Access features for importing, table searching, exporting data, as well as marker settings, language options, and project information.</li>
-      <li><strong><a href="#map-selection">Map Selection</a></strong>: Select a base map, show or hide historical map overlays, and adjust their opacity. Additional overlays are available through WMTS services.</li>
+      <li><strong><a href="#left-menu-bar">Left Menu bar</a></strong>: Menu buttons to import, search and export data, and to modify map symbol settings, language options, and project information.</li>
+      <li><strong><a href="#map-selection">Map Selection</a></strong>: Select a base map, show or hide historical map overlays, and adjust their opacity. Additional overlays are available through <a href="https://www.ogc.org/standards/wmts/" target="_blank">WMTS (Web Map Tile Service) services</a>.</li>
      </ul>
      <h4 id="left-menu-bar">
       Left Menu Bar
@@ -285,7 +285,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
    <p>The map selection menu allows you to manage the base map and map overlays, independently of the data layers created from filtered records.</p>
    <figure>
       <img src="img/01_fig2.png" alt="Map Selection" width="1000">
-      <figcaption>Map Selection Menu on the Upper-Right Corner of the NUMDa Interface</figcaption>
+      <figcaption>Map Selection Menu on the Upper-Right Corner of the MUNDa Interface</figcaption>
    </figure>
    <figure>
       <video
@@ -353,7 +353,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       <P>Select or clear the checkboxes to show or hide historical map overlays, and adjust their contrast, brightness, saturation and opacity. Multiple overlays can be selected at the same time.</P>
       
       <li><strong>Adding Map Overlays from <a href="https://gis.sinica.edu.tw/ccts/" target="_blank">Chinese Civilization in Time and Space (CCTS) WMTS Service</a></strong></li>
-      <P>MUNDa provides access to additional map overlays through WMTS (Web Map Tile Services) supplied by the <a href="https://gis.rchss.sinica.edu.tw/ccts/" target="_blank">Chinese Civilization in Time and Space (CCTS) system</a>.</P>
+      <P>MUNDa provides access to additional map overlays through <a href="https://www.ogc.org/standards/wmts/" target="_blank">WMTS (Web Map Tile Services)</a> supplied by the <a href="https://gis.rchss.sinica.edu.tw/ccts/" target="_blank">Chinese Civilization in Time and Space (CCTS) system</a>.</P>
       <ol>
          <li>Click the <strong>+</strong> button in the upper-right corner of the map selection menu.</li>
          <li>Select a <strong>Region Category</strong> from the dropdown menu.</li>
@@ -361,7 +361,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          <li>Click <strong>Load Live Version</strong>.</li>
          <li>Select one or more maps to add as <strong>overlays</strong>, and click <strong>Confirm Selection</strong>.</li>
       </ol>
-      <p>The selected overlays appear automatically in the current view. Use the overlay adjustment panel to adjust their contrast, brightness, saturation and opacity, or remove them.</p>
+      <p>The selected overlays appear automatically in the current view. Use the overlay adjustment panel to adjust their contrast, brightness, saturation and opacity, or to remove them.</p>
    <figure>
       <video
           autoplay
@@ -392,7 +392,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       X-MARKUS XML Files
      </h3>
      <p>
-      Prepare an <code>.xml</code> file exported from X-MARKUS.  containing either the complete X-MARKUS dataset or a filtered subset. Files can be exported in three ways:
+      Prepare an <code>.xml</code> file exported from X-MARKUS containing either the complete X-MARKUS dataset or a filtered subset. In X-MARKUS, files can be exported in three ways:
      </p>
      <ul>
       <li><strong>After converting annotations</strong>: Download the complete converted dataset as an<code>.xml</code>. For more information, see <a href="https://lizaodawn.github.io/X-MARKUS-instruction/XmarkusTools/XmarkusPlatform-Help-Responsive.html#converting-annotations" target="_blank">Converting Annotations</a>.</li>
@@ -557,7 +557,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
        </figure>
       </li>
       <li>
-         For IMMARKUS datasets, specify a <strong>prefix</strong> for the annotation tag group displayed in the filter panel. The default prefixis <strong>IMG</strong>.
+         For IMMARKUS datasets, specify a <strong>prefix</strong> for the annotation tag group displayed in the filter panel. The default prefix is <strong>IMG</strong>.
       </li>
       <li>
        Click <strong>Conversion</strong>.
@@ -625,7 +625,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       Pasting Tabular Data
      </h3>
      <p>
-      Copy tabular data, including the header row, from a <code>TSV</code> file, <code>Excel</code> spreadsheetor <code>Google Sheets</code> document and paste it into the input area in the Import Data dialog.
+      Copy tabular data, including the header row, from a <code>TSV</code> file, <code>Excel</code> spreadsheet or <code>Google Sheets</code> document and paste it into the input area in the Import Data dialog.
      </p>
      <ol>
       <li>
@@ -772,7 +772,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             </figcaption>
             </figure>
      <p>
-      For <strong>image</strong> records, the <strong>data info</strong> pane shows the image, along with the subfolder and image metadata recorded by the user. You can also highlight annotated regions according to the tags set by the user to view their annotated properties.
+      For <strong>image</strong> records, the <strong>data info</strong> pane shows the image, along with the subfolder and image metadata recorded by the user. You can also highlight annotated regions according to the tags set by the user to view their properties.
      </p>
      <figure>
             <video
@@ -816,22 +816,25 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       05 Searching and Filtering Data
      </h2>
      <h3 id="map-search">Map Search</h3>
-     <h4 id="tag-filter">
-      Searching Imported Records with Tag Filters
+     MUNDa provides two ways to search for records on the map: <a href="#tag-filter">Tag filters</a> and <a href="#map-filter">Map filters</a>. You can view the filtered results in different filter modes, conduct <a href="#ai-analysis">AI-assisted analysis</a> on the filtered results, and view the individual annotation information in the <strong>data info</strong> pane (for more information, see <a href="#viewing-data-point-details">Viewing Data Point Details</a>).
+     <h4> 
+     Searching Imported Records with Tag Filters
      </h4>
+     The Tag Filter mode provides three tabs for filtering, searching and exporting records.
+     <p>After you apply a filter, MUNDa highlights matching records on the map. When multiple records appear at a location, MUNDa groups them into a numbered cluster. Zoom in to expand clusters into individual markers, then click a marker to view its annotation details in the data info pane.</p>
      <ul>
       <li>
        Filter Tab
        <ul>
-         <li>Hierarchical Filtering</li>
-         <li>Advanced Filtering</li>
+         <li>Hierarchical Filtering</li>: Filter records by the annotation tags set by the user.
+         <li>Advanced Filtering</li>: Filter records using a combination of tag conditions.
        </ul>
       </li>
       <li>
-       Search Tab
+       Search Tab: Search the entire dataset for keywords in event tags or the full text.
       </li>
       <li>
-       Export Tab
+       Export Tab: the filtered results as a new data layer or as a data file in <code>TSV</code>, <code>JSON</code>, or <code>KML</code> format. You can still have the option to export the whole dataset as a data file in <code>TSV</code> or <code>EXCEL</code> format. 
       </li>
      </ul>
      
