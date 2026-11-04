@@ -9,6 +9,10 @@
   <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  />
   <style>
    html,body { 
       height: 100%;
@@ -164,6 +168,20 @@
    margin: 1em 0;
    border-radius: 4px;
 }
+
+.filter-shortcuts {
+    padding-left: 1.5rem;
+  }
+
+  .filter-shortcuts li {
+    margin-bottom: 0.75rem;
+  }
+
+  .filter-shortcuts .material-symbols-outlined {
+    font-size: 22px;
+    vertical-align: middle;
+    margin-right: 0.35rem;
+  }
    
 
    /* Media Queries for Mobile/Tablets */
@@ -855,7 +873,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       <li>
        Filter Tab
        <ul>
-         <li>Hierarchical Filtering: Filter records by the annotation tags set by the user.
+         <li>Hierarchical Filtering: Use the tag-category dropdown to filter records by their annotation tags. Navigate through the tag hierarchy and select the tag values you want to include.</li>
          <figure>
             <video
                autoplay
@@ -868,9 +886,17 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             <source src="img/05_fig3.mp4" type="video/mp4">
             </video>
             <figcaption>
-            Navigating Different Levels of Tags in the Filter Tab for a Subset Containing Text and Image Annotations
+            Navigating the Tag Hierarchy in the Filter Tab for a Subset Containing Text and Image Annotations
             </figure>
-            </li>
+            <p>The total number of records matching your selection appears at the bottom of the hierarchical filter section.</p>
+         <p>The shortcut icons next to the tag-category dropdown let you adjust tag selections and reload or clear filter data:</p>
+         <ul>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_box</span> Select All: Select all values in the current tag category.</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_box_outline_blank</span> Clear All: Clear the current tag selections.</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">swap_horiz</span> Invert Selection: Invert the current tag selections.</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">database</span> Load All Data: Reload all data for filtering.</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">delete_sweep</span> Reset: Clear filter conditions.</li>
+         </ul>
          <li>Advanced Filtering: Filter records using a combination of tag conditions.</li>
        </ul>
       </li>
