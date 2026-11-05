@@ -169,19 +169,10 @@
    border-radius: 4px;
 }
 
-.filter-shortcuts {
-    padding-left: 1.5rem;
-  }
-
-  .filter-shortcuts li {
-    margin-bottom: 0.75rem;
-  }
-
-  .filter-shortcuts .material-symbols-outlined {
-    font-size: 22px;
-    vertical-align: middle;
-    margin-right: 0.35rem;
-  }
+.material-symbols-outlined {
+  display: inline-block;
+  vertical-align: -0.25em;
+}
    
 
    /* Media Queries for Mobile/Tablets */
@@ -889,6 +880,12 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             Navigating the Tag Hierarchy in the Filter Tab for a Subset Containing Text and Image Annotations
             </figure>
             <p>The total number of records matching your selection appears at the bottom of the hierarchical filter section.</p>
+            <figure>
+               <img src="img/05_fig4.png" alt="Matching Record Count" width="1000">
+               <figcaption>
+                Viewing the Total Number of Records Matching the Current Tag Selection in the Filter Tab
+               </figcaption>
+            </figure>
          <p>The shortcut icons next to the tag-category dropdown let you adjust tag selections and reload or clear filter data:</p>
          <ul>
             <li><span class="material-symbols-outlined" aria-hidden="true">check_box</span> Select All: Select all values in the current tag category.</li>
@@ -897,7 +894,20 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             <li><span class="material-symbols-outlined" aria-hidden="true">database</span> Load All Data: Reload all data for filtering.</li>
             <li><span class="material-symbols-outlined" aria-hidden="true">delete_sweep</span> Reset: Clear filter conditions.</li>
          </ul>
-         <li>Advanced Filtering: Filter records using a combination of tag conditions.</li>
+         <p></p>
+         <li>Advanced Filtering: Use a combination of <strong>tag selections</strong> or <strong>keywords</strong> to filter records.</li>
+         <ol>
+            <li>Choose <strong>Hierarchy Builder</strong> or <strong>Keyword Search</strong> to build a new condition.</li>
+            <li>Select a tag category or enter a keywordfor each condition. For hierarchy builder, if the tag has a hierarchical structure, you can select subcategories level by level.</li>
+            <li>Click <strong>Add to Pool</strong> to add the condition to the <strong>Filter Pool</strong>.</li>
+            <li>In the <strong>Filter Pool</strong>, choose <strong>Match ANY (OR)</strong> or <strong>Match All (AND)</strong> to combine the conditions.</li>
+            <li>Click <strong>Search Data</strong> to apply the filters and view the matching records on the map.</li>
+            <figure>
+               <img src="img/05_fig5.png" alt="Advanced Filtering" width="1000">
+               <figcaption>
+                Searching for Renovation Events Caused by Violence Where the Cost Origin Is Public in the Event Subset Using the Advanced Filter
+               </figcaption>
+            </figure>
        </ul>
       </li>
       <li>
