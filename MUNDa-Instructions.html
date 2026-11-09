@@ -231,7 +231,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h2 id="about-munda">
       01 About MUNDa
      </h2>
-     <p>MUNDa is a spatial analysis platform for data annotated in <strong><a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a></strong> and <strong><a href="https://immarkus.xmarkus.org/" target="_blank">IMMARKUS</a></strong>. It imports <code>XML</code> files exported from <strong><a href="https://xmarkus.xmarkus.org/" target="_blank">X-MARKUS</a></strong>, allowing the data to be displayed and explored in an interactive GIS environment, complete with various topographic and historical administrative layers, that preserves their context and also allows for AI-assisted analysis of the spatial data.</p>
+     <p>MUNDa is a spatial analysis platform for data annotated in <strong><a href="entmarkus.xmarkus.org">ENTMARKUS</a>, </strong><strong><a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a></strong> and <strong><a href="https://immarkus.xmarkus.org/" target="_blank">IMMARKUS</a></strong>. It imports <code>XML</code> files exported from <strong><a href="https://xmarkus.xmarkus.org/" target="_blank">X-MARKUS</a></strong>, allowing the data to be displayed and explored in an interactive GIS environment, complete with various topographic and historical administrative layers, that preserves their context and also allows for AI-assisted analysis of the spatial data.</p>
      <p>MUNDa also allows for the visualization of spatial data in <code>TSV</code> and similar formats.</p>
      <p>For more information, source code, and citation details, visit the <strong>information</strong> section in <strong><a href="https://munda.xmarkus.org/" target="_blank">MUNDa</a></strong>.</p>
      <h3 id="the-interface">
@@ -902,20 +902,22 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             <li>Click <strong>Add to Pool</strong> to add the condition to the <strong>Filter Pool</strong>.</li>
             <li>In the <strong>Filter Pool</strong>, choose <strong>Match ANY (OR)</strong> or <strong>Match All (AND)</strong> to combine the conditions.</li>
             <li>Click <strong>Search Data</strong> to apply the filters and view the matching records on the map.</li>
-            <figure>
+         </ol>
+         <figure>
                <img src="img/05_fig5.png" alt="Advanced Filtering" width="1000">
                <figcaption>
                 Searching for Renovation Events Caused by Violence Where the Cost Origin Is Public in the Event Subset Using the Advanced Filter
                </figcaption>
-            </figure>
-       </ul>
-      </li>
-      <li>
-       Search Tab: Search the entire dataset for keywords in event tags or the full text.
-      </li>
-      <li>
-       Export Tab: the filtered results as a new data layer or as a data file in <code>TSV</code>, <code>JSON</code>, or <code>KML</code> format. You can still have the option to export the whole dataset as a data file in <code>TSV</code> or <code>EXCEL</code> format. 
-      </li>
+         </figure>
+         <p>You can click the <span class="material-symbols-outlined" aria-hidden="true">restart_alt</span> icon in the upper-right corner of the advanced filter section to reset the filter conditions, or click <span class="material-symbols-outlined" aria-hidden="true">location_off</span> icon to hide the markers on the map.</p>
+         </li>
+         </ul>
+         <li>
+         Search Tab: Search the entire dataset for keywords in event tags or the full text.
+         </li>
+         <li>
+         Export Tab: the filtered results as a new data layer or as a data file in <code>TSV</code>, <code>JSON</code>, or <code>KML</code> format. You can still have the option to export the whole dataset as a data file in <code>TSV</code> or <code>EXCEL</code> format. 
+         </li>
      </ul>
      
      <h4 id="map-filter">
