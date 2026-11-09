@@ -826,7 +826,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      </h2>
      <h3 id="map-search">Map Search</h3>
      MUNDa provides two ways to search for records on the map: <a href="#tag-filter">Tag filters</a> and <a href="#map-filter">Map filters</a>. You can view the filtered results in different filter modes, conduct <a href="#ai-analysis">AI-assisted analysis</a> on the filtered results, and view the individual annotation information in the <strong>data info</strong> pane (for more information, see <a href="#viewing-data-point-details">Viewing Data Point Details</a>).
-     <h4> 
+     <h4 id="tag-filter"> 
      Searching Imported Records with Tag Filters
      </h4>
      The Tag Filter mode provides three tabs for filtering, searching and exporting records.
@@ -913,7 +913,40 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          </li>
          </ul>
          <li>
-         Search Tab: Search the entire dataset for keywords in event tags or the full text.
+         Search Tab: In the <strong>Search Tab</strong>, you can search the entire dataset for keywords in text or image annotation tags, the full text of textual records, or image metadata. Choose one of two search modes:
+         <ul>
+            <li>
+               Annotation Tag Keyword Search: Enter a keyword to search only within text or image annotation tags, including tag categories and normalizations.
+            <figure>
+               <video
+                  autoplay
+                  muted
+                  playsinline
+                  loop
+                  width="1000"
+                  style="max-width: 100%; height: auto;"
+               >
+               <source src="img/05_fig6.mp4" type="video/mp4">
+               </video>
+               <figcaption>
+                Searching for Records with “Renovation” in Their Annotation Tags Within a Subset Using the Search Tab
+               </figcaption>
+            </figure>
+            </li>
+            <li>
+               Document Keyword Search: Enter a keyword to search the full text in textual datasets or the metadata in image datasets.
+            </li>
+            
+            <p>In both modes, MUNDa displays the number of matching records and their percentage of the entire dataset below the search bar and highlights them on the map.</p>
+            <p>Use the following icons to manage your search and results:</p>
+            <ul>
+               <li><span class="material-symbols-outlined" aria-hidden="true">search</span>: Run the search.</li>
+               <li><span class="material-symbols-outlined" aria-hidden="true">location_off</span>: Clear the marker highlights on the map.</li>
+               <li><span class="material-symbols-outlined" aria-hidden="true">backspace</span>: Clear the keyword input.</li>
+               <li><span class="material-symbols-outlined" aria-hidden="true">layers</span>: Add the search results as a new data layer on the map.</li>
+            </ul>
+            <p></p>
+         </ul>
          </li>
          <li>
          Export Tab: the filtered results as a new data layer or as a data file in <code>TSV</code>, <code>JSON</code>, or <code>KML</code> format. You can still have the option to export the whole dataset as a data file in <code>TSV</code> or <code>EXCEL</code> format. 
@@ -1115,6 +1148,33 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
           <a href="#map-search">
            Map Search
           </a>
+          <ul>
+            <li>
+             <a href="#tag-filter">
+              Searching Imported Records with Tag Filters
+             </a>
+            </li>
+            <li>
+             <a href="#map-filter">
+              Searching Imported Records with Map Filter
+             </a>
+            </li>
+            <li>
+             <a href="#ai-analysis">
+              Working with Filtered Results with AI-Assisted Analysis
+             </a>
+            </li>
+            <li>
+               <a href="#annotation-info">
+               Viewing Annotation Information as Filtered Results
+               </a>
+            </li>
+            <li>
+               <a href="#annotation-info">
+               Viewing Annotation Information as Filtered Results
+               </a>
+            </li>
+          </ul>
          </li>
          <li>
           <a href="#table-search">
