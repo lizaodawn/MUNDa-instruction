@@ -13,6 +13,10 @@
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
   />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
+>
   <style>
    html,body { 
       height: 100%;
@@ -985,9 +989,11 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h4 id="map-filter">
       Searching Imported Records with Map Filter
      </h4>
+     <p> In the Map Filter mode, use the <strong>spatial lasso</strong><span class="mdi mdi-lasso" aria-hidden="true"></span> to draw an area on the map and filter the records within it. You can then view the matching records in a chronological timeline based on either the <strong>publication year</strong> recorded in their metadata (<a href="#mapfilter-metadata-view">Metadata View</a>) or the <strong>event time</strong> annotated by the user in <a href="comarkus.xmarkus.org">COMARKUS</a> (<a href="#mapfilter-event-view">Event View</a>).</p>
+     <p>In <a href="mapfilter-event-view">Event View</a>, you can also explore tag distributions through various infographics.</p>
      <ul>
-      <li>Metadata View</li>
-      <li>Event View</li>
+      <li id="mapfilter-metadata-view">Metadata View</li>
+      <li id="mapfilter-event-view">Event View</li>
       <li>Reset</li>
      </ul>
      
