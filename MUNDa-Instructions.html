@@ -989,12 +989,44 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h4 id="map-filter">
       Searching Imported Records with Map Filter
      </h4>
-     <p> In the Map Filter mode, use the <strong>spatial lasso</strong><span class="mdi mdi-lasso" aria-hidden="true"></span> to draw an area on the map and filter the records within it. You can then view the matching records in a chronological timeline based on either the <strong>publication year</strong> recorded in their metadata (<a href="#mapfilter-metadata-view">Metadata View</a>) or the <strong>event time</strong> annotated by the user in <a href="comarkus.xmarkus.org">COMARKUS</a> (<a href="#mapfilter-event-view">Event View</a>).</p>
-     <p>In <a href="mapfilter-event-view">Event View</a>, you can also explore tag distributions through various infographics.</p>
+     <p> In the Map Filter mode, use the <strong>spatial lasso</strong><span class="mdi mdi-lasso" aria-hidden="true"></span> to draw an area on the map and filter the records within it. You can browse the matching records in either the <a href="#mapfilter-metadata-view">Metadata View</a> or the <a href="#mapfilter-event-view">Event View</a>.</p>
+     <p>In <a href="#mapfilter-event-view">Event View</a>, you can also explore tag distributions through various infographics.</p>
      <ul>
       <li id="mapfilter-metadata-view">Metadata View</li>
+      <p><strong>Metadata View</strong>opens by default and lists records in reverse chronological order based on the publication year recorded in their metadata.</p>
+      <ol>
+         <li>Toggle on the spatial lasso <span class="mdi mdi-lasso" aria-hidden="true"></span> at the right top corner on the map.</li>
+         <li>Draw a shape around your area of interest to filter the records. The matching records appear in the timeline.</li>
+         <li>Click on a record on the timeline to view its details.</li>
+      </ol>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig9.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Using the Spatial Lasso to Draw a Shape Around an Area of Interest to Filter Records in Metadata View
+            </figcaption>
+         </figure>
       <li id="mapfilter-event-view">Event View</li>
+      <p><strong>Event View</strong> lists records in reverse chronological order based on the event time annotated by the user in <a href="comarkus.xmarkus.org" target="_blank">COMARKUS</a>. You can also explore tag distributions and further filter the records through interactive charts. For image datasets without event times, you can still use the tag statistics panel to explore tag distributions.</p>
+      <ol>
+         <li>Click the second tab in the Map Filter pane to switch to Event View.</li>
+         <li>Select a tag in the first tag pool to explore its distribution within the matching records. If the tags set by the user have a hierarchical structure, a new pool shows the selected tag’s child categories. Continue selecting tags to explore deeper levels of the hierarchy.</li>
+         <li>Choose a chart type to view the distribution at the current level: Bar, H-Bar, Pie, Donut, Line, or Radar.</li>
+         <li>Hover over a chart element to view the tag counts and the number of records associated with it.</li>
+         <li>You can expand the Details section below the chart to see each tag’s total occurrences, the number of records containing it, and its percentage of the matching records.</li>
+         <li>Click a chart element to filter the records by the corresponding tag category. You can also export the filtered results as a new data layer or download them in <code>TSV</code> format.</li>
+      </ol>
+      <p></p>
       <li>Reset</li>
+      <p>Click the <strong>Reset</strong> button to clear the current map filter  area and display all records on the map.</p>
      </ul>
      
      <h4 id="ai-analysis">
