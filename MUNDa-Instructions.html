@@ -1035,16 +1035,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          </figure>
          <li>Select a tag in the first tag pool to explore its distribution within the matching records. If the tags set by the user have a hierarchical structure, a new pool shows the selected tag's child categories. Continue selecting tags to explore deeper levels of the hierarchy.</li>
          <figure>
-            <video
-               autoplay
-               muted
-               playsinline
-               loop
-               width="1000"
-               style="max-width: 100%; height: auto;"
-            >
-            <source src="img/05_fig11.mp4" type="video/mp4">
-            </video>
+            <img src="img/05_fig11.png" alt="Selecting Tag in First Tag Pool" width="1000">
             <figcaption>
             Selecting "Event" in the First Tag Pool to Explore Its Type Distribution Within the Three Matching Records in a Bar Chart
             </figcaption>
@@ -1137,16 +1128,139 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h4 id="ai-analysis">
       Working with Filtered Results with AI-Assisted Analysis
      </h4>
+     <p>
+      MUNDa includes a built-in AI chatbot that lets you explore filtered results through conversation. You can ask specific questions, request summaries, or continue with follow-up questions.
+     </p>
+     <p>The chatbot uses third-party AI services. Consider the provider’s data-handling and privacy policies before submitting your data. We do not recommend using this feature with sensitive data or entire unpublished datasets.
+     </p>
      <ol>
       <li>
-       Set your AI model and parameters.
+      Use the <strong>spatial lasso <span class="mdi mdi-lasso" aria-hidden="true"></span></strong> draw an area on the map and filter the records within it. MUNDa organizes the matching records into a structured format for the AI model and automatically adds them to the prompt.
+      </li>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig17.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Selecting an Area on the Map and Viewing the Automatically Generated Prompt for the Filtered Records in the AI Chatbot Panel
+            </figcaption>
+         </figure>
+      <li>
+      <p>Click the <strong>settings gear icon <span class="material-symbols-outlined" aria-hidden="true">settings</span></strong> to open the AI settings. Enter the API key for your chosen provider and select a model. You can adjust the model temperature, or add a custom model by specifying its provider and model ID.</p>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig18.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Opening the AI Settings to Adjust the Model Temperature
+            </figcaption>
+         </figure>
+      <details>
+      <summary>Currently supported models</summary>
+      <ul>
+    
+         <li>
+            <strong>Google</strong>
+            <ul>
+            <li>Gemini 3.5 Flash</li>
+            <li>Gemini 3.1 Pro</li>
+            <li>Gemini 3.1 Flash Lite</li>
+            <li>Gemini 3 Pro</li>
+            <li>Gemini 3 Flash</li>
+             <li>Gemini 2.5 Flash (Default)</li>
+            <li>Gemini 2.5 Pro</li>
+            <li>Gemini 1.5 Pro</li>
+            <li>Gemini 1.5 Flash</li>
+            </ul>
+         </li>
+
+         <li>
+            <strong>Anthropic</strong>
+            <ul>
+            <li>Claude Opus 4.7</li>
+            <li>Claude Sonnet 4.6</li>
+            <li>Claude Opus 4.5</li>
+            <li>Claude Sonnet 4.5</li>
+            <li>Claude Haiku 4.5</li>
+            <li>Claude Opus 4.1</li>
+            <li>Claude Sonnet 3.5</li>
+            <li>Claude Opus 3</li>
+            </ul>
+         </li>
+
+         <li>
+            <strong>OpenAI</strong>
+            <ul>
+            <li>GPT-5.5 Pro</li>
+            <li>GPT-5.5</li>
+            <li>GPT-5.4</li>
+            <li>GPT-5.2</li>
+            <li>GPT-5.2 Chat</li>
+            <li>GPT-5.2 Pro</li>
+            <li>GPT-5</li>
+            <li>GPT-4o</li>
+            <li>GPT-4 Turbo</li>
+            </ul>
+         </li>
+
+         <li>
+            <strong>xAI</strong>
+            <ul>
+            <li>grok-4-0709</li>
+            <li>grok-3-mini</li>
+            <li>grok-3</li>
+            </ul>
+         </li>
+
+         <li>
+            <strong>DeepSeek</strong>
+            <ul>
+            <li>DeepSeek-V4 Pro</li>
+            <li>DeepSeek-V4 Flash</li>
+            <li>DeepSeek-R1 (0528 Update)</li>
+            <li>DeepSeek-R1</li>
+            <li>DeepSeek-V3</li>
+            <li>DeepSeek Chat</li>
+            </ul>
+         </li>
+      </ul>
+      </details>
       </li>
       <li>
-       Modify your prompt based on the one generated with the filtered results.
+       Review and edit the generated prompt. Add specific questions about the filtered results or ask the model to summarize the data.
       </li>
       <li>
-       Click <strong>Send</strong>.
+       Click <strong>Send</strong> to submit your request. Continue the conversation with follow-up questions to explore the results further. Click the <strong>full screen <span class="material-symbols-outlined" aria-hidden="true">fullscreen</span></strong> icon to expand the AI chatbot panel and view the full conversation history.
       </li>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig19.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Expanding the AI Chatbot Panel to View the Full Conversation History
+            </figcaption>
+         </figure>
      </ol>
     
      <h4 id="annotation-info">
