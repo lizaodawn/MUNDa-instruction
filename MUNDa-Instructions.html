@@ -916,7 +916,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
          <p>You can click the <span class="material-symbols-outlined" aria-hidden="true">restart_alt</span> icon in the upper-right corner of the advanced filter section to reset the filter conditions, or click <span class="material-symbols-outlined" aria-hidden="true">location_off</span> icon to hide the markers on the map.</p>
          </li>
          </ul>
-         <li>
+         <li id="tag-filter-search-tab">
          Search Tab: In the <strong>Search Tab</strong>, you can search the entire dataset for keywords in text or image annotation tags, the full text of textual records, or image metadata. Choose one of two search modes:
          <ul>
             <li>
@@ -1297,7 +1297,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
             <source src="img/05_fig21.mp4" type="video/mp4">
             </video>
             <figcaption>
-            Filtering Image Records at the Same Location Using Map Filter and Viewing Each Record’s Annotation Details in the Info Pane
+            Filtering Image Records at the Same Location Using Map Filter and Viewing Each Record's Annotation Details in the Info Pane
             </figcaption>
          </figure>
      </ul>
@@ -1306,9 +1306,100 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h3 id="table-search">
       Table Search
      </h3>
+     <p>Besides exploring records on the map, MUNDa also presents imported data as a table, giving you an alternative view of your records. In the data table, you can view record details, search and filter values by column, and export the results. You can also search the place names in the <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap database</a>.</p>
      <ul>
-      <li>Search place names in imported records or the <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap database</a>.</li>
-      <li>Filter individual table columns by keyword.</li>
+      <li>Navigating and Filtering Records in the Data Table</li>
+      <P>Click the <strong>search icon</strong><span class="material-symbols-outlined" aria-hidden="true">search</span> in the left-hand toolbar to open the data table, where each row is a record and each column is a field. You can then:</P>
+      <ul>
+         <li>Search the table data in the data tool. The matching records appear on the map, as in the <a href="#tag-filter-search-tab">Search Tab</a> feature in <a href="#map-search">Map Search</a>.</li>
+         <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig22.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Searching Within a Subset Containing Both Textual and Image Datasets for Records with "Stone" in Their Annotation Tags Using Table Search and Viewing the Filtered Results on the Map
+            </figcaption>
+         </figure>
+         <li>Click a row to view the record's details in the <strong>Info</strong> pane.</li>
+         <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig23.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Clicking a Row in the Data Table to View the Record's Details in the Info Pane
+            </figcaption>
+         </figure>
+         <li>Hover over a cell to preview its full content.</li>
+         <li>Type in the search field of a column to filter the table by that column's values./li>
+         <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig24.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Typing in the Search Field of the Annotation Column to Filter the Table by Records Containing "striped"
+            </figcaption>
+         </figure>
+         <li>Export the whole or filtered table in <code>TSV</code> or <code>Excel</code> format.</li>
+         <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig25.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Exporting the Filtered Table of Records Containing "striped" as a New Data Layer on the Map
+            </figcaption>
+         </figure>
+      </ul>
+      <li>Searching Place Names</li>
+      <p>MUNDa integrates the <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap database</a>, so you can search for any place name, view its location on the map, and see the details retrived from the database in the <strong>Info</strong> pane. This includes place names that appear in the data table.</p>
+      <ol>
+         <li>Click the <strong>search icon <span class="material-symbols-outlined" aria-hidden="true">search</span></strong> in the left-hand toolbar to open the data table dialog.</li>
+         <li>In the Data Tool section, select <strong>OSM Database</strong>.</li>
+         <li>Enter a place name in the search field, then press Enter or click the search button.</li>
+         <li>MUNDa marks the results on the map. Click a marker to view its details in the <strong>Info</strong> pane.</li>
+      </ol>
+      <figure>
+            <video
+               autoplay
+               muted
+               playsinline
+               loop
+               width="1000"
+               style="max-width: 100%; height: auto;"
+            >
+            <source src="img/05_fig26.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+            Searching for the Place Name "資陽" in the OpenStreetMap Database and Viewing the Results on the Map and in the Info Pane
+            </figcaption>
+         </figure>
      </ul>
 
      <a class="back-to-top" href="#searching-data">
