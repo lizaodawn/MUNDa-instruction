@@ -264,22 +264,22 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
 
       <p>
       <i class="fa-solid fa-magnifying-glass"></i>
-      Table Search: Search <strong>place names</strong> in imported records or the <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap database</a>, or filter individual table columns by keyword. For more information, see <a href="#table-search">Table Search</a> in <a href="#searching-and-filtering-data">Searching and Filtering Data</a>.
+      Table Search: Search <strong>place names</strong> in imported records or the <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap database</a>, or filter individual table columns by keyword. For more information, see <a href="#table-search">Table Search</a> in <a href="#searching-data">Searching and Filtering Data</a>.
       </p>
 
       <p>
       <i class="fa-solid fa-clock"></i>
-      Time Range: Filter records by a selected period. The time range is based on event time for event datasets, or on the publication time recorded in the metadata if event time is unavailable or the dataset is not event-based. You can download the time-filtered records or add them directly to the map as a new layer. For more information, see <a href="#searching-and-filtering-data">Searching and Filtering Data</a>.
+      Time Range: Filter records by a selected period. The time range is based on event time for event datasets, or on the publication time recorded in the metadata if event time is unavailable or the dataset is not event-based. You can download the time-filtered records or add them directly to the map as a new layer. For more information, see <a href="#searching-data">Searching and Filtering Data</a>.
       </p>
 
       <p>
       <i class="fa-solid fa-file-export"></i>
-      Export: Export the full imported dataset or a filtered subset in <code>TSV</code>, <code>JSON</code>, or <code>Excel</code> format. You can also export the map as a <code>PNG</code> image. For more information, see <a href="#exporting-data">Exporting Data</a>.
+      Export: Export the full imported dataset or a filtered subset in <code>TSV</code>, <code>JSON</code>, or <code>Excel</code> format. You can also export the map as a <code>PNG</code> image. For more information, see <a href="#exporting">Exporting Data</a>.
       </p>
 
       <p>
       <i class="fa-solid fa-gear"></i>
-      Map Marker Settings: Adjust the appearance of markers for imported records and filtered results. For more information, see <a href="#adjusting-display-settings">Adjusting Display Settings</a>.
+      Map Marker Settings: Adjust the appearance of markers for imported records and filtered results. For more information, see <a href="#display-settings">Adjusting Display Settings</a>.
       </p>
 
       <p>
@@ -1412,19 +1412,35 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h2 id="display-settings">
       06 Adjusting Display Settings
      </h2>
+     <p>Click the settings icon <i class="fa-solid fa-gear"></i> in the left-hand toolbar to adjust the appearance of markers on the map.</p>
      <h3 id="regular-marker-settings">
       Regular Marker Appearance
      </h3>
      <p>
-      Open Settings to adjust marker color, symbol, and size. 
-     </p>
+      Regular markers represent the individual records of imported data. Customizing their appearance helps you distinguish between batches of imported data in different layers. You can adjust the following settings:
+     </p> 
+     <ul>
+      <li>Marker Color: Choose a color from the palette or enter a hex code.</li>
+      <li>Marker Shape: Select a shape from the dropdown menu.</li>
+      <li>Marker Size: Enter a number to set the size. A larger number produces a larger marker.</li>
+     </ul>
+     <figure><img src="img/06_fig1.png" alt="Regular Marker Settings">
+     <figurecaption>
+      Marker Settings Pane for Adjusting the Appearance of Regular Markers on the Map
+     </figurecaption>
+     </figure>
      <h3 id="filter-result-marker-settings">
       Filtered Result Marker Appearance
      </h3>
      <p>
-      Separate settings are available for search-result markers.
+      You can set a different marker style for filtered results to distinguish them from regular markers on the map. To enable these settings, tick the "Search Marker Settings" checkbox.
      </p>
-     
+     <figure><img src="img/06_fig2.png" alt="Filtered Result Marker Settings">
+     <figurecaption>
+      Marker Settings Pane for Adjusting the Appearance of Filtered Result Markers on the Map
+     </figurecaption>
+     </figure>
+
      <a class="back-to-top" href="#display-settings">
       ↑ Back to section top
      </a>
