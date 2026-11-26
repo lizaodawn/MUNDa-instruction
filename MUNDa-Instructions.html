@@ -1424,7 +1424,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
       <li>Marker Shape: Select a shape from the dropdown menu.</li>
       <li>Marker Size: Enter a number to set the size. A larger number produces a larger marker.</li>
      </ul>
-     <figure><img src="img/06_fig1.png" alt="Regular Marker Settings">
+     <figure><img src="img/06_fig1.png" alt="Regular Marker Settings" width="1000">
      <figurecaption>
       Marker Settings Pane for Adjusting the Appearance of Regular Markers on the Map
      </figurecaption>
@@ -1435,7 +1435,7 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <p>
       You can set a different marker style for filtered results to distinguish them from regular markers on the map. To enable these settings, tick the "Search Marker Settings" checkbox.
      </p>
-     <figure><img src="img/06_fig2.png" alt="Filtered Result Marker Settings">
+     <figure><img src="img/06_fig2.png" alt="Filtered Result Marker Settings" width="1000">
      <figurecaption>
       Marker Settings Pane for Adjusting the Appearance of Filtered Result Markers on the Map
      </figurecaption>
@@ -1450,16 +1450,48 @@ table.data-table { width:100%; border-collapse:collapse; margin:18px 0; }
      <h2 id="exporting">
       07 Exporting Data and Maps
      </h2>
+     <p>MUNDa provides several options for exporting your data and maps. You can export the entire dataset, filtered subsets, or map images.</p>
      <h3 id="export-all">
       Exporting All Data
      </h3>
-     
+     After you import your annotation data, MUNDa converts it into a data table. You can export the entire converted dataset in <code>TSV</code>, <code>JSON</code>, or <code>EXCEL</code> format for later use or for integration with other tools.
+     <ol>
+      <li>Click the <i class="fa-solid fa-file-export"></i> icon to open the export options.</li>
+      <li>Choose the desired export format, then export the data.</li>
+     </ol>
+     <figure>
+      <img src="img/07_fig1.png" alt="Exporting All Data" width="1000">
+      <figurecaption>
+       Export Options for Exporting the Entire Dataset
+      </figurecaption>
+     </figure>
      <h3 id="export-subset">
       Exporting Filtered Data
      </h3>
+     <p>After applying a filter in <a href="map-search">Map Search</a>, <a href="#table-search">Table Search</a>, or <a href="time-range-search">Time Range Search</a>, you can export the filtered results as a new data layer on the map or as a file in <code>TSV</code>, <code>JSON</code>, or <code>KML</code> format. You can use these files later or integrate them with other tools.</p>
      <ul>
-      <li>Export as Data Files</li>
       <li>Export as New Map Layer</li>
+      <figure><img src="img/07_fig2.png" alt="Exporting Filtered Data as New Map Layer" width="1000">
+       <figurecaption>
+        Export as New Map Layer Option for Exporting Filtered Results in the Tag Filter Pane
+       </figurecaption>
+      </figure>
+      <figure><img src="img/07_fig3.png" alt="Exporting Filtered Data as New Map Layer" width="1000">
+       <figurecaption>
+        Map Filter pane Export as New Map Layer Option for Exporting Filtered Results in the Map Filter Pane
+       </figurecaption>
+       </figure>
+       <figure><img src="img/07_fig4.png" alt="Exporting Filtered Data as New Map Layer" width="1000">
+       <figurecaption>
+        Table Search dialog Export as New Map Layer Option for Exporting Filtered Results in the Table Search Dialog
+       </figurecaption>
+       </figure>
+       <figure><img src="img/07_fig5.png" alt="Exporting Filtered Data as New Map Layer" width="1000">
+       <figurecaption>
+        Export as New Map Layer Option for Exporting Filtered Results in the Time Range Search Dialog
+       </figurecaption>
+       </figure>
+      <li>Export as Data Files</li>
      </ul>
 
      <h3 id="export-image">
